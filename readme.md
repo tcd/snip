@@ -2,7 +2,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/tcd/snip.svg)](https://github.com/tcd/snip/issues)
 [![License](https://img.shields.io/github/license/tcd/snip.svg)](https://github.com/tcd/snip/blob/master/LICENSE)
 
-
 ## Snippets
 - [**TextMate Snippets**](http://manual.macromates.com/en/snippets)
 
@@ -37,6 +36,8 @@
 - [Creating your own Snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 - Samples
   - [xabikos/vscode-react](https://github.com/xabikos/vscode-react)
+  - [Snippet Extensions](https://marketplace.visualstudio.com/search?target=VSCode&category=Snippets&sortBy=Downloads)
+  - [`microsoft/vscode/extensions/*/snippets/*`](https://github.com/microsoft/vscode/tree/master/extensions)
 
 ### Other
 - [Emmet Snippets](https://docs.emmet.io/customization/snippets/)
@@ -45,7 +46,5 @@
 - TODO: Xcode
 - TODO: JetBrains Editors
 
-
 ## [License](https://github.com/tcd/snip/blob/master/LICENSE)
-
 
