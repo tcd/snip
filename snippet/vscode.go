@@ -2,15 +2,20 @@ package snippet
 
 import (
 	"encoding/json"
-	"log"
+	"fmt"
+	"io/ioutil"
+	"strings"
 )
 
 // ParseCodeFile parses a VS Code snippet file.
-func ParseCodeFile(path string) []Snippet {
-	bytes := bytesFromFile(path)
+func ParseCodeFile(path string) ([]Snippet, error) {
+	bytes, err := ioutil.ReadFile(path)
+	if err != nil {
+		return []Snippet{}, err
+	}
 	emptyInterface := makeGenericInterface(bytes)
 	codeSnippets := parseUnknownJSON(emptyInterface)
-	return codeSnippets
+	return codeSnippets, nil
 }
 
 // Unmarshal JSON bytes using a generic interface
@@ -29,23 +34,23 @@ func parseUnknownJSON(x interface{}) []Snippet {
 
 	itemsMap := x.(map[string]interface{})
 
-	for _, v := range itemsMap {
+	for k, v := range itemsMap {
 		switch jsonObj := v.(type) {
 		case interface{}:
-			var snippet Snippet
+			snippet := Snippet{Name: strings.TrimSpace(k)}
 			for itemKey, itemValue := range jsonObj.(map[string]interface{}) {
 				switch itemKey {
 				case "prefix":
 					switch itemValue := itemValue.(type) {
 					case string:
-						snippet.Trigger = itemValue
+						snippet.Trigger = strings.TrimSpace(itemValue)
 					default:
 						break
 					}
 				case "description":
 					switch itemValue := itemValue.(type) {
 					case string:
-						snippet.Description = itemValue
+						snippet.Description = strings.TrimSpace(itemValue)
 					default:
 						break
 					}
