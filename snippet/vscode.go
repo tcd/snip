@@ -2,37 +2,15 @@ package snippet
 
 import (
 	"encoding/json"
-	"fmt"
+	"log"
 )
-
-// CodeSnippet models raw a snippet parsed from a JSON file.
-type CodeSnippet struct {
-	Prefix      string
-	Body        []string
-	Description string
-}
 
 // ParseCodeFile parses a VS Code snippet file.
 func ParseCodeFile(path string) []Snippet {
-	bytes := getBytes(path)
+	bytes := bytesFromFile(path)
 	emptyInterface := makeGenericInterface(bytes)
 	codeSnippets := parseUnknownJSON(emptyInterface)
-
-	var snippets []Snippet
-
-	for _, snippet := range codeSnippets {
-		snippets = append(snippets, codeSnippetToSnippet(snippet))
-	}
-	return snippets
-}
-
-func codeSnippetToSnippet(snippet CodeSnippet) Snippet {
-	newSnippet := Snippet{
-		Name:        snippet.Prefix,
-		Body:        snippet.Body,
-		Description: snippet.Description,
-	}
-	return newSnippet
+	return codeSnippets
 }
 
 // Unmarshal JSON bytes using a generic interface
@@ -40,34 +18,34 @@ func makeGenericInterface(bytes []byte) interface{} {
 	var x interface{}
 	err := json.Unmarshal(bytes, &x)
 	if err != nil {
-		fmt.Println("Error parsing JSON: ", err)
+		log.Println("Error parsing JSON: ", err)
 	}
 	return x
 }
 
 // See: https://gist.github.com/mjohnsullivan/24647cae50928a34b5cc
-func parseUnknownJSON(x interface{}) []CodeSnippet {
-	var snippets []CodeSnippet
+func parseUnknownJSON(x interface{}) []Snippet {
+	var snippets []Snippet
 
 	itemsMap := x.(map[string]interface{})
 
 	for _, v := range itemsMap {
 		switch jsonObj := v.(type) {
 		case interface{}:
-			var item CodeSnippet
+			var snippet Snippet
 			for itemKey, itemValue := range jsonObj.(map[string]interface{}) {
 				switch itemKey {
 				case "prefix":
 					switch itemValue := itemValue.(type) {
 					case string:
-						item.Prefix = itemValue
+						snippet.Trigger = itemValue
 					default:
 						break
 					}
 				case "description":
 					switch itemValue := itemValue.(type) {
 					case string:
-						item.Description = itemValue
+						snippet.Description = itemValue
 					default:
 						break
 					}
@@ -78,9 +56,9 @@ func parseUnknownJSON(x interface{}) []CodeSnippet {
 						for _, v := range itemValue {
 							body = append(body, v.(string))
 						}
-						item.Body = body
+						snippet.Body = body
 					case string:
-						item.Body = []string{itemValue}
+						snippet.Body = []string{itemValue}
 					default:
 						break
 					}
@@ -88,7 +66,7 @@ func parseUnknownJSON(x interface{}) []CodeSnippet {
 					break
 				}
 			}
-			snippets = append(snippets, item)
+			snippets = append(snippets, snippet)
 		default:
 			break
 		}
