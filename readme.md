@@ -11,6 +11,8 @@
 - Samples
   - [atom/language-html](https://github.com/atom/language-html/blob/master/snippets/language-html.cson)
   - [atom/language-javascript](https://github.com/atom/language-javascript/blob/master/snippets/language-javascript.cson)
+  - [webbushka/atom-react-snippets](https://github.com/webbushka/atom-react-snippets)
+  - [joseramonc/rails-snippets](https://github.com/joseramonc/rails-snippets)
 
 ### Emacs
 - [joaotavora/yasnippet](https://github.com/joaotavora/yasnippet)
@@ -44,11 +46,14 @@
   - [Snippet Extensions](https://marketplace.visualstudio.com/search?target=VSCode&category=Snippets&sortBy=Downloads)
   - [`microsoft/vscode/extensions/*/snippets/*`](https://github.com/microsoft/vscode/tree/master/extensions)
 
+### Xcode
+- Samples
+  - [burczyk/XcodeSwiftSnippets](https://github.com/burczyk/XcodeSwiftSnippets)
+
 ### Other
 - [Emmet Snippets](https://docs.emmet.io/customization/snippets/)
 - [Alfred3 Snippets](https://www.alfredapp.com/help/features/snippets/)
 - TODO: Visual Studio
-- TODO: Xcode
 - TODO: JetBrains Editors
 
 ## [License](https://github.com/tcd/snip/blob/master/LICENSE)
