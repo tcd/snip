@@ -18,7 +18,7 @@ func makeGenericInterface(bytes []byte) interface{} {
 	var x interface{}
 	err := json.Unmarshal(bytes, &x)
 	if err != nil {
-		log.Println("Error parsing JSON: ", err)
+		fmt.Println("Error parsing JSON: ", err)
 	}
 	return x
 }
