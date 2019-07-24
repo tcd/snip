@@ -2,6 +2,7 @@
 package snippet
 
 import (
+	"io/ioutil"
 	"regexp"
 	"strings"
 )
@@ -24,9 +25,12 @@ func ParseUltisnipsSnippet(s string) Snippet {
 }
 
 // ParseUltisnipsFile returns an array of strings containing all snippets in a file at the given path.
-func ParseUltisnipsFile(path string) []string {
-	bytes := bytesFromFile(path)
+func ParseUltisnipsFile(path string) ([]string, error) {
+	bytes, err := ioutil.ReadFile(path)
+	if err != nil {
+		return []string{}, err
+	}
 	re := regexp.MustCompile(`(?msU:((^snippet.+$\n)(.+)(?:endsnippet)))`)
 	matches := re.FindAllString(string(bytes), -1)
-	return matches
+	return matches, nil
 }
