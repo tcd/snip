@@ -19,8 +19,13 @@
 ### Sublime
 - [Extending Sublime Text » Snippets](http://docs.sublimetext.info/en/latest/extensibility/snippets.html)
 - [Meduim - Sublime3 Snippets](https://medium.freecodecamp.org/a-guide-to-preserving-your-wrists-with-sublime-text-snippets-7541662a53f2)
+- [~~bobthecow/sublime-sane-snippets~~](https://github.com/bobthecow/sublime-sane-snippets)
 - Samples
   - [babel/babel-sublime-snippets](https://github.com/babel/babel-sublime-snippets)
+  - [JasonMortonNZ/bs3-sublime-plugin](https://github.com/JasonMortonNZ/bs3-sublime-plugin)
+  - [tadast/sublime-rails-snippets](https://github.com/tadast/sublime-rails-snippets)
+  - [jprichardson/sublime-js-snippets](https://github.com/jprichardson/sublime-js-snippets)
+  - [zenorocha/sublime-javascript-snippets](https://github.com/zenorocha/sublime-javascript-snippets)
 
 ### Vim
 - [vim snippet engines](http://vim-wiki.mawercer.de/wiki/topic/text-snippets-skeletons-templates.html)

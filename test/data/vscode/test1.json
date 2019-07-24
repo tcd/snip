@@ -1,6 +1,6 @@
 {
 	"multiline snippet": {
-		"prefix": "multiline snippet",
+		"prefix": "multi",
 		"body": [
 			"line1",
 			"line2",
@@ -9,7 +9,7 @@
 		"description": "A multiline snippet"
 	},
 	"single line snippet": {
-		"prefix": "single line snippet",
+		"prefix": "single",
 		"body": "single line",
 		"description": "A single line snippet"
 	}
