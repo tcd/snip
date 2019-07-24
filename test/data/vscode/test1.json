@@ -10,7 +10,7 @@
 	},
 	"single line snippet": {
 		"prefix": "single",
-		"body": "single line",
+		"body": "single line, but it's pretty long",
 		"description": "A single line snippet"
 	}
 }
