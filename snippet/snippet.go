@@ -5,7 +5,7 @@ package snippet
 type Snippet struct {
 	Name        string
 	Trigger     string
-	Rules       []string
+	Rules       string
 	Body        []string
 	Description string
 }
