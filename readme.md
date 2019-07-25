@@ -56,5 +56,13 @@
 - TODO: Visual Studio
 - TODO: JetBrains Editors
 
+## Related Projects
+- [pawelgrzybek/snippet-generator (JS)](https://github.com/pawelgrzybek/snippet-generator) - Snippet generator for Visual Studio Code, Sublime Text and Atom
+- [idleberg/atomizr-cli (JS/TS)](https://github.com/idleberg/atomizr-cli) - Convert snippets for Atom, Sublime Text, TextMate, and Visual Studio Code
+- [digitaldrummerj/convert-snippets-to-vscode (JS)](https://github.com/digitaldrummerj/convert-snippets-to-vscode) - Convert Textmate or Sublime Snippets to VSCode Format
+- [RickStrahl/VisualStudioSnippetConverter (C#)](https://github.com/joaotavora/yasmate) - Utility to convert Visual Studio Code Snippets to VS Code and Rider.
+- [joaotavora/yasmate (ELisp/Ruby)](https://github.com/joaotavora/yasmate) - Convert textmate bundles to yasnippet format 
+- [mattfidler/textmate-to-yas.el (ELisp/Pearl)](https://github.com/mattfidler/textmate-to-yas.el) - Import Textmate bundles to Yasnippet (0.7+) snippets
+
 ## [License](https://github.com/tcd/snip/blob/master/LICENSE)
 
