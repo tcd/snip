@@ -29,6 +29,7 @@ func makeGenericInterface(bytes []byte) interface{} {
 }
 
 // See: https://gist.github.com/mjohnsullivan/24647cae50928a34b5cc
+// TODO: Check for snippet scope on top level.
 func parseUnknownJSON(x interface{}) []Snippet {
 	var snippets []Snippet
 
