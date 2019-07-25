@@ -2,67 +2,27 @@
 [![GitHub issues](https://img.shields.io/github/issues/tcd/snip.svg)](https://github.com/tcd/snip/issues)
 [![License](https://img.shields.io/github/license/tcd/snip.svg)](https://github.com/tcd/snip/blob/master/LICENSE)
 
-## Snippets
-- [**TextMate Snippets**](http://manual.macromates.com/en/snippets)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/dunstontc/assets/master/gifs/amazing.gif" alt="snippet gif" width="75%">
+</div>
 
-### Atom
-- [Atom Flight Manual » Snippets](https://flight-manual.atom.io/using-atom/sections/snippets/)
-- [atom/snippets](https://github.com/atom/snippets)
-- Samples
-  - [atom/language-html](https://github.com/atom/language-html/blob/master/snippets/language-html.cson)
-  - [atom/language-javascript](https://github.com/atom/language-javascript/blob/master/snippets/language-javascript.cson)
-  - [webbushka/atom-react-snippets](https://github.com/webbushka/atom-react-snippets)
-  - [joseramonc/rails-snippets](https://github.com/joseramonc/rails-snippets)
-
-### Emacs
-- [joaotavora/yasnippet](https://github.com/joaotavora/yasnippet)
-- [emacswiki - Yasnippet](https://www.emacswiki.org/emacs/Yasnippet)
-
-### Sublime
-- [Extending Sublime Text » Snippets](http://docs.sublimetext.info/en/latest/extensibility/snippets.html)
-- [Meduim - Sublime3 Snippets](https://medium.freecodecamp.org/a-guide-to-preserving-your-wrists-with-sublime-text-snippets-7541662a53f2)
-- [~~bobthecow/sublime-sane-snippets~~](https://github.com/bobthecow/sublime-sane-snippets)
-- Samples
-  - [babel/babel-sublime-snippets](https://github.com/babel/babel-sublime-snippets)
-  - [JasonMortonNZ/bs3-sublime-plugin](https://github.com/JasonMortonNZ/bs3-sublime-plugin)
-  - [tadast/sublime-rails-snippets](https://github.com/tadast/sublime-rails-snippets)
-  - [jprichardson/sublime-js-snippets](https://github.com/jprichardson/sublime-js-snippets)
-  - [zenorocha/sublime-javascript-snippets](https://github.com/zenorocha/sublime-javascript-snippets)
-
-### Vim
-- [vim snippet engines](http://vim-wiki.mawercer.de/wiki/topic/text-snippets-skeletons-templates.html)
-  - [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate)
-  - [SirVer/ultisnips](https://github.com/SirVer/ultisnips)
-  - [Shougo/neosnippet.vim](https://github.com/Shougo/neosnippet.vim)
-  - [Shougo/deoppet.nvim](https://github.com/Shougo/deoppet.nvim)
-- Samples
-  - [honza/vim-snippets](https://github.com/honza/vim-snippets)
-  - [Shougo/neosnippet-snippets](https://github.com/Shougo/neosnippet-snippets)
-
-### VSCode
-- [Creating your own Snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
-- Samples
-  - [xabikos/vscode-react](https://github.com/xabikos/vscode-react)
-  - [Snippet Extensions](https://marketplace.visualstudio.com/search?target=VSCode&category=Snippets&sortBy=Downloads)
-  - [`microsoft/vscode/extensions/*/snippets/*`](https://github.com/microsoft/vscode/tree/master/extensions)
-
-### Xcode
-- Samples
-  - [burczyk/XcodeSwiftSnippets](https://github.com/burczyk/XcodeSwiftSnippets)
-
-### Other
-- [Emmet Snippets](https://docs.emmet.io/customization/snippets/)
-- [Alfred3 Snippets](https://www.alfredapp.com/help/features/snippets/)
-- TODO: Visual Studio
-- TODO: JetBrains Editors
+## Currently Supported Snippet Formats:
+- Textmate [~~v1~~](http://manual.macromates.com/en/snippets) [~~v2~~](https://macromates.com/textmate/manual/snippets#grammar) 
+- [Sublime Text 3](http://docs.sublimetext.info/en/latest/extensibility/snippets.html)
+- [~~Atom~~](https://flight-manual.atom.io/using-atom/sections/snippets/)
+- [VS Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+- Vim ([Ultisnips](https://github.com/SirVer/ultisnips), [~~NeoSnippet~~](https://github.com/Shougo/neosnippet.vim), [~~Snipmate~~](https://github.com/garbas/vim-snipmate))
+- Emacs ([YASnippet](https://github.com/joaotavora/yasnippet))
+- ~~Xcode~~
+- [~~Visual Studio~~](https://docs.microsoft.com/en-us/visualstudio/ide/code-snippets?view=vs-2019)
+- ~~Jetbrains IDEs~~
 
 ## Related Projects
-- [pawelgrzybek/snippet-generator (JS)](https://github.com/pawelgrzybek/snippet-generator) - Snippet generator for Visual Studio Code, Sublime Text and Atom
-- [idleberg/atomizr-cli (JS/TS)](https://github.com/idleberg/atomizr-cli) - Convert snippets for Atom, Sublime Text, TextMate, and Visual Studio Code
-- [digitaldrummerj/convert-snippets-to-vscode (JS)](https://github.com/digitaldrummerj/convert-snippets-to-vscode) - Convert Textmate or Sublime Snippets to VSCode Format
-- [RickStrahl/VisualStudioSnippetConverter (C#)](https://github.com/joaotavora/yasmate) - Utility to convert Visual Studio Code Snippets to VS Code and Rider.
-- [joaotavora/yasmate (ELisp/Ruby)](https://github.com/joaotavora/yasmate) - Convert textmate bundles to yasnippet format 
-- [mattfidler/textmate-to-yas.el (ELisp/Pearl)](https://github.com/mattfidler/textmate-to-yas.el) - Import Textmate bundles to Yasnippet (0.7+) snippets
+- [pawelgrzybek/snippet-generator (JS)](https://github.com/pawelgrzybek/snippet-generator)
+- [idleberg/atomizr-cli (JS/TS)](https://github.com/idleberg/atomizr-cli)
+- [digitaldrummerj/convert-snippets-to-vscode (JS)](https://github.com/digitaldrummerj/convert-snippets-to-vscode)
+- [RickStrahl/VisualStudioSnippetConverter (C#)](https://github.com/joaotavora/yasmate)
+- [joaotavora/yasmate (ELisp/Ruby)](https://github.com/joaotavora/yasmate)
+- [mattfidler/textmate-to-yas.el (ELisp/Pearl)](https://github.com/mattfidler/textmate-to-yas.el)
 
 ## [License](https://github.com/tcd/snip/blob/master/LICENSE)
-
