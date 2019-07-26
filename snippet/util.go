@@ -27,6 +27,16 @@ func getGroups(regEx, testString string) (groupsMap map[string]string) {
 	return groupsMap
 }
 
+// trimQuotes Removes surrounding quotes from a string if they are present.
+func trimQuotes(s string) string {
+	if len(s) >= 2 {
+		if s[0] == '"' && s[len(s)-1] == '"' {
+			return s[1 : len(s)-1]
+		}
+	}
+	return s
+}
+
 // CompareSnippets Compares two snip.Snippets and returns nil
 // if their fields match or and error if they don't.
 func CompareSnippets(have Snippet, want Snippet) error {
@@ -51,4 +61,16 @@ func CompareSnippets(have Snippet, want Snippet) error {
 		}
 	}
 	return nil
+}
+
+// FindSnippetByName finds a given snip.Snippet in an array of snip.Snippets
+// by name, or returns an error if one is not found.
+func FindSnippetByName(name string, snippets []Snippet) (Snippet, error) {
+	for _, s := range snippets {
+		if s.Name == name {
+			return s, nil
+		}
+	}
+	return Snippet{}, errors.New("No matching snippet found")
+
 }

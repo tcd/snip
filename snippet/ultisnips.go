@@ -29,14 +29,13 @@ func ParseUltisnipsSnippet(s string) Snippet {
 
 	lines := strings.Split(s, "\n")
 
-	matches := getGroups(`^snippet\s+(?P<trigger>.?\w+.?)\s(?P<description>".+")\s(?P<options>[biemrstwA]+)?$`, lines[0])
-	body := lines[:len(lines)-2]
+	matches := getGroups(`^snippet\s+(?P<trigger>.?\w+.?)\s(?P<description>".+")\s(?P<options>[biemrstwA]+$)?`, lines[0])
 
 	return Snippet{
 		Name:        "",
-		Trigger:     matches["trigger"],
-		Rules:       matches["rules"],
-		Body:        body,
-		Description: matches["description"],
+		Trigger:     trimQuotes(matches["trigger"]),
+		Rules:       matches["options"],
+		Body:        lines[1 : len(lines)-1],
+		Description: trimQuotes(matches["description"]),
 	}
 }
