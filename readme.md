@@ -7,15 +7,15 @@
 </div>
 
 ## Currently Supported Snippet Formats:
-- Textmate [~~v1~~](http://manual.macromates.com/en/snippets) [~~v2~~](https://macromates.com/textmate/manual/snippets#grammar) 
-- [~~Sublime Text 3~~](http://docs.sublimetext.info/en/latest/extensibility/snippets.html)
 - [~~Atom~~](https://flight-manual.atom.io/using-atom/sections/snippets/)
-- [~~VS Code~~](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
-- Vim ([~~Ultisnips~~](https://github.com/SirVer/ultisnips), [~~NeoSnippet~~](https://github.com/Shougo/neosnippet.vim), [~~Snipmate~~](https://github.com/garbas/vim-snipmate))
-- Emacs ([~~YASnippet~~](https://github.com/joaotavora/yasnippet))
-- ~~Xcode~~
-- [~~Visual Studio~~](https://docs.microsoft.com/en-us/visualstudio/ide/code-snippets?view=vs-2019)
+- ~~Emacs~~ ([~~YASnippet~~](https://github.com/joaotavora/yasnippet))
 - ~~Jetbrains IDEs~~
+- [~~Sublime Text 3~~](http://docs.sublimetext.info/en/latest/extensibility/snippets.html)
+- ~~Textmate~~ [~~v1~~](http://manual.macromates.com/en/snippets) [~~v2~~](https://macromates.com/textmate/manual/snippets#grammar) 
+- ~~Vim~~ ([~~Ultisnips~~](https://github.com/SirVer/ultisnips), [~~NeoSnippet~~](https://github.com/Shougo/neosnippet.vim), [~~Snipmate~~](https://github.com/garbas/vim-snipmate))
+- [~~Visual Studio~~](https://docs.microsoft.com/en-us/visualstudio/ide/code-snippets?view=vs-2019)
+- [~~VS Code~~](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+- ~~Xcode~~
 
 ## Related Projects
 - [pawelgrzybek/snippet-generator (JS)](https://github.com/pawelgrzybek/snippet-generator)
