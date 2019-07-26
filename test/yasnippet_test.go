@@ -10,9 +10,9 @@ func TestYasnippetSnippet(t *testing.T) {
 	want := snip.Snippet{
 		Name:        "console.log",
 		Trigger:     "clg",
-		Body:        []string{"", "console.log(${1:object})", ""},
-		Rules:       "",
 		Description: "",
+		Rules:       "",
+		Body:        []string{"", "console.log(${1:object})", ""},
 	}
 
 	have, err := snip.ParseYasnippetFile("./testdata/yasnippet/js/clg")

@@ -8,8 +8,10 @@ import (
 
 func TestParseUltisnipsFile(t *testing.T) {
 	want := snip.Snippet{
-		Name:    "",
-		Trigger: "lorem",
+		Name:        "",
+		Trigger:     "lorem",
+		Description: "Lorem Ipsum - 50 Words",
+		Rules:       "b",
 		Body: []string{
 			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod",
 			"tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At",
