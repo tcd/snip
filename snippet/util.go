@@ -9,7 +9,6 @@ import (
 // and returns the group values defined in the expression.
 //
 // Thanks eluleci (https://stackoverflow.com/a/39635221/7687024)
-//
 func getGroups(regEx, testString string) (groupsMap map[string]string) {
 
 	compiledRegEx := regexp.MustCompile(regEx)
@@ -64,7 +63,7 @@ func CompareSnippets(have Snippet, want Snippet) error {
 }
 
 // FindSnippetByName finds a given Snippet in an array of Snippets
-// by name, or returns an error if one is not found.
+// by Name, or returns an error if one is not found.
 func FindSnippetByName(name string, snippets []Snippet) (Snippet, error) {
 	for _, s := range snippets {
 		if s.Name == name {
@@ -72,5 +71,15 @@ func FindSnippetByName(name string, snippets []Snippet) (Snippet, error) {
 		}
 	}
 	return Snippet{}, errors.New("No matching snippet found")
+}
 
+// FindSnippetByTrigger finds a given Snippet in an array of Snippets
+// by Trigger, or returns an error if one is not found.
+func FindSnippetByTrigger(trigger string, snippets []Snippet) (Snippet, error) {
+	for _, s := range snippets {
+		if s.Trigger == trigger {
+			return s, nil
+		}
+	}
+	return Snippet{}, errors.New("No matching snippet found")
 }
