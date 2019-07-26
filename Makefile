@@ -5,10 +5,9 @@
 
 SHELL := /bin/bash
 
-.PHONY: testing
 test-run:
 	scripts/test.sh
 
-.PHONY: test
 test: test-run
 
+.PHONY: testing test
