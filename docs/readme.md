@@ -22,6 +22,12 @@
 ## TextMate
 - [TextMate Snippets](http://manual.macromates.com/en/snippets)
 - Samples
+  - [textmate/javascript.tmbundle](https://github.com/textmate/javascript.tmbundle/tree/master/Snippets)
+  - [textmate/html.tmbundle](https://github.com/textmate/html.tmbundle/tree/master/Snippets)
+  - [textmate/ruby.tmbundle](https://github.com/textmate/ruby.tmbundle/tree/master/Snippets)
+  - [textmate/python.tmbundle](https://github.com/textmate/python.tmbundle/tree/master/Snippets)
+  - [textmate/swift.tmbundle](https://github.com/textmate/swift.tmbundle/tree/master/Snippets)
+  - [elixir-editors/elixir-tmbundle](https://github.com/elixir-editors/elixir-tmbundle/tree/master/Snippets)
 
 ## Atom
 - [Atom Flight Manual » Snippets](https://flight-manual.atom.io/using-atom/sections/snippets/)
