@@ -7,15 +7,17 @@ import (
 	"strings"
 )
 
-// ParseCodeFile parses a VS Code snippet file.
+// ParseCodeFile returns an array of snip.Snippets parsed
+// from the VS Code snippet JSON file at the given path,
+// or an error if something goes wrong.
 func ParseCodeFile(path string) ([]Snippet, error) {
 	bytes, err := ioutil.ReadFile(path)
 	if err != nil {
 		return []Snippet{}, err
 	}
 	emptyInterface := makeGenericInterface(bytes)
-	codeSnippets := parseUnknownJSON(emptyInterface)
-	return codeSnippets, nil
+	snippets := parseUnknownJSON(emptyInterface)
+	return snippets, nil
 }
 
 // Unmarshal JSON bytes using a generic interface

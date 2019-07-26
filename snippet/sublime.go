@@ -14,8 +14,9 @@ type sublimeSnippet struct {
 	Scope       string `xml:"scope"`
 }
 
-// ParseSublimeSnippetFile parses a Sublime Text ".sublime-snippet" file and returns a Snippet.
-func ParseSublimeSnippetFile(path string) (Snippet, error) {
+// ParseSublimeFile parses a Sublime Text ".sublime-snippet" file
+// and returns a snip.Snippet or an error if something goes wrong.
+func ParseSublimeFile(path string) (Snippet, error) {
 	var s sublimeSnippet
 
 	bytes, err := ioutil.ReadFile(path)
@@ -29,22 +30,19 @@ func ParseSublimeSnippetFile(path string) (Snippet, error) {
 	}
 
 	return sublimeSnippetToSnippet(s, path), nil
-
 }
 
-func sublimeSnippetToSnippet(s sublimeSnippet, fileName string) Snippet {
-	name := filepath.Base(fileName)
+func sublimeSnippetToSnippet(s sublimeSnippet, path string) Snippet {
+	name := filepath.Base(path)
 	// Not using `strings.TrimSuffix` here because we
 	// don't want to remove any extra `.`'s in the filename.
 	name = strings.Replace(name, ".sublime-snippet", "", -1)
 
 	return Snippet{
-		Name:    strings.TrimSpace(name),
-		Trigger: strings.TrimSpace(s.Trigger),
-		Rules:   "",
-		Body:    strings.Split(s.Body, "\n"),
-		// Body:    []string{s.Body},
-		// Body:        parseSublimeSnippetBody(s.Body),
+		Name:        strings.TrimSpace(name),
+		Trigger:     strings.TrimSpace(s.Trigger),
+		Rules:       "",
+		Body:        strings.Split(s.Body, "\n"),
 		Description: strings.TrimSpace(s.Description),
 	}
 }
