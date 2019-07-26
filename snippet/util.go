@@ -37,7 +37,7 @@ func trimQuotes(s string) string {
 	return s
 }
 
-// CompareSnippets Compares two snip.Snippets and returns nil
+// CompareSnippets Compares two Snippets and returns nil
 // if their fields match or and error if they don't.
 func CompareSnippets(have Snippet, want Snippet) error {
 	if have.Name != want.Name {
@@ -63,7 +63,7 @@ func CompareSnippets(have Snippet, want Snippet) error {
 	return nil
 }
 
-// FindSnippetByName finds a given snip.Snippet in an array of snip.Snippets
+// FindSnippetByName finds a given Snippet in an array of Snippets
 // by name, or returns an error if one is not found.
 func FindSnippetByName(name string, snippets []Snippet) (Snippet, error) {
 	for _, s := range snippets {

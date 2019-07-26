@@ -38,7 +38,7 @@ type jbOption struct {
 	Value string `xml:"value,attr"`
 }
 
-// ParseJetBrainsFile returns an array of snip.Snippets parsed
+// ParseJetBrainsFile returns an array of Snippets parsed
 // from the JetBrains snippet xml file at the given path,
 // or an error if something goes wrong.
 func ParseJetBrainsFile(path string) ([]Snippet, error) {

@@ -20,7 +20,7 @@ type yasnippetSnippet struct {
 }
 
 // ParseYasnippetFile parses a YASnippet file at the given path and
-// returns a snip.Snippet or an error if something goes wrong.
+// returns a Snippet or an error if something goes wrong.
 func ParseYasnippetFile(path string) (Snippet, error) {
 	var s Snippet
 
@@ -35,7 +35,7 @@ func ParseYasnippetFile(path string) (Snippet, error) {
 }
 
 // parseYasnippet only gets the minimal ammount of info needed
-// for a snip.Snippet, much is left on the table.
+// for a Snippet, much is left on the table.
 func parseYasnippet(snip string, path string) Snippet {
 	var s Snippet
 

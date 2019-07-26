@@ -15,7 +15,7 @@ type sublimeSnippet struct {
 }
 
 // ParseSublimeFile parses a Sublime Text ".sublime-snippet" file
-// and returns a snip.Snippet or an error if something goes wrong.
+// and returns a Snippet or an error if something goes wrong.
 func ParseSublimeFile(path string) (Snippet, error) {
 	var s sublimeSnippet
 

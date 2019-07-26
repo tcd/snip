@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// ParseCodeFile returns an array of snip.Snippets parsed
+// ParseCodeFile returns an array of Snippets parsed
 // from the VS Code snippet JSON file at the given path,
 // or an error if something goes wrong.
 func ParseCodeFile(path string) ([]Snippet, error) {
