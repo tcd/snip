@@ -27,18 +27,23 @@ func getGroups(regEx, testString string) (groupsMap map[string]string) {
 	return groupsMap
 }
 
-func compareSnippets(have Snippet, want Snippet) error {
+// CompareSnippets Compares two snip.Snippets and returns nil
+// if their fields match or and error if they don't.
+func CompareSnippets(have Snippet, want Snippet) error {
 	if have.Name != want.Name {
 		return errors.New("Name mismatch:\nhave = " + have.Name + "\nwant = " + want.Name)
 	}
 	if have.Trigger != want.Trigger {
 		return errors.New("Trigger mismatch:\nhave = " + have.Trigger + "\nwant = " + want.Trigger)
 	}
+	if have.Description != want.Description {
+		return errors.New("Description mismatch:\nhave = " + have.Description + "\nwant = " + want.Description)
+	}
 	if have.Rules != want.Rules {
 		return errors.New("Rules mismatch:\nhave = " + have.Rules + "\nwant = " + want.Rules)
 	}
-	if have.Description != want.Description {
-		return errors.New("Description mismatch:\nhave = " + have.Description + "\nwant = " + want.Description)
+	if have.Scope != want.Scope {
+		return errors.New("Scope mismatch:\nhave = " + have.Scope + "\nwant = " + want.Scope)
 	}
 	for i := range have.Body {
 		if have.Body[i] != want.Body[i] {
