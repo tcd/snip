@@ -31,16 +31,8 @@ func (s Snippet) String() string {
 	if s.Rules != "" {
 		sb.WriteString("Rules:       " + s.Rules + "\n")
 	}
-
 	sb.WriteString("Body:\n")
-	length := len(s.Body) - 1
-	for i, str := range s.Body {
-		if i == length {
-			sb.WriteString(str)
-		} else {
-			sb.WriteString(str + "\n")
-		}
-	}
+	sb.WriteString(strings.Join(s.Body, "\n"))
 
 	return sb.String()
 }
