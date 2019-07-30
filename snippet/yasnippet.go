@@ -42,7 +42,6 @@ func parseYasnippet(snip string, path string) Snippet {
 	lines := strings.Split(snip, "\n")
 
 	for i, line := range lines {
-		// fmt.Println(len(line))
 		if len(line) == 0 {
 			continue
 		}
