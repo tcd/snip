@@ -6,6 +6,24 @@ import (
 	"strings"
 )
 
+// Yasnippet returns a Snippet in YASnippet format.
+func (s Snippet) Yasnippet() string {
+	var sb strings.Builder
+
+	sb.WriteString("# -*- mode: snippet -*-\n")
+	if s.Name != "" {
+		sb.WriteString("# name: " + s.Name + "\n")
+	}
+	if s.Trigger != "" {
+		sb.WriteString("# key: " + s.Trigger + "\n")
+	}
+	sb.WriteString("# type: snippet\n")
+	sb.WriteString("# --\n")
+	sb.WriteString(strings.Join(s.Body, "\n"))
+
+	return sb.String()
+}
+
 type yasnippetSnippet struct {
 	Key         string   `raw:"# key:"`  // trigger
 	Name        string   `raw:"# name:"` // name; filename by default
@@ -63,7 +81,7 @@ func parseYasnippet(snip string, path string) Snippet {
 	return s
 }
 
-func parseYasnippetFull() yasnippetSnippet {
-	var s yasnippetSnippet
-	return s
-}
+// func parseYasnippetFull() yasnippetSnippet {
+// 	var s yasnippetSnippet
+// 	return s
+// }
