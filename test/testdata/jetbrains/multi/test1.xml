@@ -1,0 +1,8 @@
+<templateSet group="test snippets">
+  <template name="cll" value="console.log($END$);" description="Console: console.log (text only)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+</templateSet>
