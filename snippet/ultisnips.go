@@ -51,7 +51,9 @@ func ParseUltisnipsSnippet(s string) Snippet {
 
 	lines := strings.Split(s, "\n")
 	header := lines[0]
-	// body := strings.Join(lines[1:len(lines)-1], "\n")
+	body := strings.Join(lines[1:len(lines)-1], "\n")
+
+	_ = cleanUltisnipBody(body)
 
 	// options := regexp.MustCompile(`(?:\s+)([biemrstwA]+$)`).FindAllString(header, -1)
 	// if len(options) == 1 {
@@ -60,23 +62,25 @@ func ParseUltisnipsSnippet(s string) Snippet {
 	// 	}
 	// }
 
-	// Python Interpolation: `\x60\!p[^\x60]+\x60`
-	// Any interpolationL `\x60[^\x60]+\x60
-	// interpolations := regexp.MustCompile("`[^`]+`").FindAllString(body, -1)
-	// if len(interpolations) > 0 {
-	// 	if strings.Contains(interpolations[0], "r") {
-	// 		// handle delims for trigger
-	// 		fmt.Println(interpolations)
-	// 	}
-	// }
-
-	matches := getGroups(`^snippet\s+(?P<trigger>.?\w+.?)\s(?P<description>".+")\s(?P<options>[biemrstwA]+$)?`, header)
+	matches := getGroups(`^snippet\s+(?P<trigger>\S+)\s(?P<description>".+")(?P<options>\s[biemrstwA]+$)?`, header)
 
 	return Snippet{
-		Name:        "",
 		Trigger:     trimQuotes(matches["trigger"]),
-		Rules:       matches["options"],
-		Body:        lines[1 : len(lines)-1],
+		Rules:       strings.TrimSpace(matches["options"]),
+		Body:        strings.Split(cleanUltisnipBody(body), "\n"),
 		Description: trimQuotes(matches["description"]),
 	}
+}
+
+// Remove interpolated code from the body of a snippet.
+func cleanUltisnipBody(s string) string {
+	// Python Interpolation: `\x60\!p[^\x60]+\x60` "`\!p[^`]+`"
+	// Any interpolationL `\x60[^\x60]+\x60
+	iPattern := regexp.MustCompile("`[^`]+`")
+
+	interpolations := iPattern.FindAllString(s, -1)
+	if len(interpolations) > 0 {
+		s = iPattern.ReplaceAllString(s, "")
+	}
+	return s
 }

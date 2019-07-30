@@ -8,7 +8,6 @@ import (
 
 func TestParseUltisnipsFile(t *testing.T) {
 	want := snip.Snippet{
-		Name:        "",
 		Trigger:     "lorem",
 		Description: "Lorem Ipsum - 50 Words",
 		Rules:       "b",
@@ -33,7 +32,6 @@ func TestParseUltisnipsFile(t *testing.T) {
 
 func TestUltisnipsSlashDelimiters(t *testing.T) {
 	want := snip.Snippet{
-		Name:        "",
 		Trigger:     "/^main/",
 		Description: "Main function",
 		Rules:       "r",
@@ -57,14 +55,12 @@ func TestUltisnipsSlashDelimiters(t *testing.T) {
 
 func TestUltisnipsPythonInterpolation(t *testing.T) {
 	want := snip.Snippet{
-		Name:        "",
-		Trigger:     "",
+		Trigger:     "doc",
 		Description: "doc block (triple quotes)",
-		Rules:       "",
 		Body: []string{
-			"`!p snip.rv = triple_quotes(snip)`",
+			"",
 			"${1:${VISUAL:doc}}",
-			"`!p snip.rv = triple_quotes(snip)`",
+			"",
 		},
 	}
 
