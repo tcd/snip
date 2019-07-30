@@ -52,6 +52,9 @@
   - [textmate/python.tmbundle](https://github.com/textmate/python.tmbundle/tree/master/Snippets)
   - [textmate/swift.tmbundle](https://github.com/textmate/swift.tmbundle/tree/master/Snippets)
   - [elixir-editors/elixir-tmbundle](https://github.com/elixir-editors/elixir-tmbundle/tree/master/Snippets)
+- Parsing a plist file
+  - [DHowett/go-plist](https://github.com/DHowett/go-plist)
+  - [groob/plist](https://github.com/groob/plist)
 
 ## Atom
 
