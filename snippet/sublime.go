@@ -34,14 +34,11 @@ func ParseSublimeFile(path string) (Snippet, error) {
 
 func sublimeSnippetToSnippet(s sublimeSnippet, path string) Snippet {
 	name := filepath.Base(path)
-	// Not using `strings.TrimSuffix` here because we
-	// don't want to remove any extra `.`'s in the filename.
 	name = strings.Replace(name, ".sublime-snippet", "", -1)
 
 	return Snippet{
 		Name:        strings.TrimSpace(name),
 		Trigger:     strings.TrimSpace(s.Trigger),
-		Rules:       "",
 		Body:        strings.Split(s.Body, "\n"),
 		Description: strings.TrimSpace(s.Description),
 	}
