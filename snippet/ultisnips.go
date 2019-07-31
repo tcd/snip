@@ -1,4 +1,3 @@
-// Package snippet provides snippet models.
 package snippet
 
 import (
@@ -39,13 +38,13 @@ func ParseUltisnipsFile(path string) ([]Snippet, error) {
 	matches := re.FindAllString(string(bytes), -1)
 
 	for _, s := range matches {
-		snippets = append(snippets, ParseUltisnipsSnippet(s))
+		snippets = append(snippets, parseUltisnipsSnippet(s))
 	}
 	return snippets, nil
 }
 
-// ParseUltisnipsSnippet parses a raw string UltiSnips snippet.
-func ParseUltisnipsSnippet(s string) Snippet {
+// parseUltisnipsSnippet parses a raw string UltiSnips snippet.
+func parseUltisnipsSnippet(s string) Snippet {
 
 	lines := strings.Split(s, "\n")
 	header := lines[0]
