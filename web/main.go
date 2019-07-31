@@ -26,11 +26,26 @@ func main() {
 	http.HandleFunc("/favicon.ico", faviconHandler)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static/"))))
 
+	http.HandleFunc("/parse", handleParse)
+
 	log.Println("Listening on localhost: " + getPort())
 	err := http.ListenAndServe(getPort(), nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
+}
+
+func handleParse(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost {
+		r.ParseForm()
+		inputFormat := r.FormValue("inputFormat")
+		outputFormat := r.FormValue("outputFormat")
+		inputContent := r.FormValue("inputContent")
+
+		fmt.Println(inputFormat + " -> " + outputFormat)
+		fmt.Println(inputContent)
+	}
+	http.Redirect(w, r, "/", 302)
 }
 
 func faviconHandler(w http.ResponseWriter, r *http.Request) {

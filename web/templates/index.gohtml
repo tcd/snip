@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/static/index.css">
   <title>Snip</title>
 </head>
@@ -15,9 +16,50 @@
       <h1>Snip</h1>
     </header>
 
-    <main>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem enim reprehenderit possimus commodi
-      reiciendis vero ad. Rem a deserunt, nihil neque quae, fuga repellat tempore, itaque beatae aliquid natus quisquam!
+    <main class="container">
+      <form method="POST" action="/parse">
+
+        <div class="row">
+
+          <div class="col-6">
+            <label for="inputFormat">Input Format</label>
+            <select class="form-control" id="inputFormat" name="inputFormat">
+              <option value="jetbrains">JetBrains</option>
+              <option value="neosnippet">Neosnippet</option>
+              <option value="sublime">Sublime</option>
+              <option value="textmate">TextMate</option>
+              <option value="ultisnips">Ultisnips</option>
+              <option value="vscode">VSCode</option>
+              <option value="xcode">Xcode</option>
+              <option value="yasnippet">YASnippet</option>
+            </select>
+          </div>
+
+          <div class="col-6">
+            <label for="outputFormat">Output Format</label>
+            <select class="form-control" id="outputFormat" name="outputFormat">
+              <option value="jetbrains">JetBrains</option>
+              <option value="neosnippet">Neosnippet</option>
+              <option value="sublime">Sublime</option>
+              <option value="textmate">TextMate</option>
+              <option value="ultisnips">Ultisnips</option>
+              <option value="vscode">VSCode</option>
+              <option value="xcode">Xcode</option>
+              <option value="yasnippet">YASnippet</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <label for="inputContent"></label>
+            <textarea class="form-control" id="inputContent" name="inputContent" rows="3" cols="10"></textarea>
+          </div>
+
+          <div class="col-12">
+            <button type="submit">Submit</button>
+          </div>
+
+        </div>
+      </form>
     </main>
 
     <footer>
@@ -26,6 +68,15 @@
 
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
