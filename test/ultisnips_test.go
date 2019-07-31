@@ -10,7 +10,6 @@ func TestParseUltisnipsFile(t *testing.T) {
 	want := snip.Snippet{
 		Trigger:     "lorem",
 		Description: "Lorem Ipsum - 50 Words",
-		Rules:       "b",
 		Body: []string{
 			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod",
 			"tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At",
@@ -34,7 +33,6 @@ func TestUltisnipsSlashDelimiters(t *testing.T) {
 	want := snip.Snippet{
 		Trigger:     "/^main/",
 		Description: "Main function",
-		Rules:       "r",
 		Body: []string{
 			"func main() {",
 			"	${0:${VISUAL}}",

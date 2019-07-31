@@ -17,9 +17,6 @@ func (s Snippet) Ultisnips() string {
 	if s.Description != "" {
 		sb.WriteString(" \"" + s.Description + "\"")
 	}
-	if s.Rules != "" {
-		sb.WriteString(" " + s.Rules)
-	}
 	sb.WriteString("\n")
 	sb.WriteString(strings.Join(s.Body, "\n"))
 	sb.WriteString("\n")
@@ -66,7 +63,6 @@ func ParseUltisnipsSnippet(s string) Snippet {
 
 	return Snippet{
 		Trigger:     trimQuotes(matches["trigger"]),
-		Rules:       strings.TrimSpace(matches["options"]),
 		Body:        strings.Split(cleanUltisnipBody(body), "\n"),
 		Description: trimQuotes(matches["description"]),
 	}

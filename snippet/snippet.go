@@ -8,7 +8,6 @@ type Snippet struct {
 	Name        string
 	Trigger     string
 	Description string
-	Rules       string
 	Scope       string
 	Body        []string
 }
@@ -27,9 +26,6 @@ func (s Snippet) String() string {
 	}
 	if s.Scope != "" {
 		sb.WriteString("Scope:       " + s.Scope + "\n")
-	}
-	if s.Rules != "" {
-		sb.WriteString("Rules:       " + s.Rules + "\n")
 	}
 	sb.WriteString("Body:\n")
 	sb.WriteString(strings.Join(s.Body, "\n"))

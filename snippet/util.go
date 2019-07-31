@@ -48,9 +48,6 @@ func CompareSnippets(have Snippet, want Snippet) error {
 	if have.Description != want.Description {
 		return errors.New("Description mismatch:\nhave = " + have.Description + "\nwant = " + want.Description)
 	}
-	if have.Rules != want.Rules {
-		return errors.New("Rules mismatch:\nhave = " + have.Rules + "\nwant = " + want.Rules)
-	}
 	if have.Scope != want.Scope {
 		return errors.New("Scope mismatch:\nhave = " + have.Scope + "\nwant = " + want.Scope)
 	}
