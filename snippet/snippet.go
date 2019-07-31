@@ -12,6 +12,7 @@ type Snippet struct {
 	Body        []string
 }
 
+// String() method for use by Printf, Println, etc.
 func (s Snippet) String() string {
 	var sb strings.Builder
 

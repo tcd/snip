@@ -25,7 +25,8 @@ func (s Snippet) Ultisnips() string {
 	return sb.String()
 }
 
-// ParseUltisnipsFile returns an array of strings containing all snippets in a file at the given path.
+// ParseUltisnipsFile returns an array of Snippets from file at the given path
+// or an error.
 func ParseUltisnipsFile(path string) ([]Snippet, error) {
 
 	var snippets []Snippet
