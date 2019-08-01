@@ -16,10 +16,17 @@ web:
 	@scripts/web.sh
 .PHONY: web
 
-test-run:
-	scripts/test.sh
+all:
+	@echo "Nothing to do for all"
+.PHONY: all
 
-test: test-run
+build:
+	@echo "Nothing to do for build"
+.PHONY: build
+
+clean:
+	@echo "Nothing to do for clean"
+.PHONY: clean
 
 help:	
 	@echo
